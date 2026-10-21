@@ -1,0 +1,256 @@
+:root {
+  --preto: #000;
+  --branco: #fff;
+  --cinza: #595959;
+  --cinza-claro: #8c8c8c;
+  --linha: #d9d9d9; /* linhas */
+  --coluna-titulo: 200px; /* largura */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--preto);
+  background: var(--branco);
+}
+
+.container {
+  max-width: 720px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--preto);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+p {
+  margin: 0;
+}
+
+/* ---------- Menu ---------- */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 28px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 40px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 4px 0;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  border-bottom-color: var(--cinza-claro);
+}
+
+nav a[aria-current="page"] {
+  border-bottom-color: var(--preto);
+}
+
+/* ---------- Topo da página inicial (centralizado) ---------- */
+header {
+  text-align: center;
+  padding: 40px 0 48px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.center img {
+  width: 176px;
+  height: 176px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 30%;
+  box-shadow:
+    0 0 0 6px var(--branco),
+    0 0 0 8px var(--preto);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.25rem, 7vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.cargo {
+  margin-top: 12px;
+  font-size: 1.125rem;
+  color: var(--cinza);
+  text-wrap: balance; /* evita uma palavra sozinha na última linha */
+}
+
+/* ---------- Conteúdo ---------- */
+main {
+  flex: 1;
+  padding-bottom: 64px;
+}
+
+/* títulos das páginas Certificados e Contato */
+main h1 {
+  margin: 16px 0 12px;
+}
+
+.intro {
+  max: width 0px;
+  margin-bottom: 50px;
+  color: var(--cinza);
+}
+
+/* Linhas com título à esquerda e conteúdo à direita
+   (seções da página inicial e itens da página de contato) */
+.secao,
+.contato {
+  display: grid;
+  grid-template-columns: var(--coluna-titulo) 1fr;
+  gap: 8px 32px;
+  padding: 28px 0;
+  border-top: 1px solid var(--linha);
+}
+
+.contato:last-child {
+  border-bottom: 1px solid var(--linha);
+}
+
+.secao h2,
+.contato dt {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.contato dd {
+  margin: 0;
+}
+
+.contatos {
+  margin: 0;
+}
+
+.secao a,
+.contato a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.secao a:hover,
+.contato a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- Certificados ---------- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 32px 24px;
+}
+
+.certificado {
+  margin: 0;
+}
+
+.certificado a {
+  display: block;
+  border: 1px solid var(--linha);
+}
+
+.certificado a:hover {
+  border-color: var(--preto);
+}
+
+.certificado img {
+  display: block;
+  width: 100%;
+  height: auto; /* mostra o certificado inteiro, sem cortar */
+}
+
+.certificado figcaption {
+  margin-top: 12px;
+}
+
+.certificado strong {
+  display: block;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.certificado span {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.9375rem;
+  color: var(--cinza);
+}
+
+/* ---------- Rodapé ---------- */
+footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  padding: 24px 0 32px;
+  border-top: 1px solid var(--linha);
+}
+
+footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+footer img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(
+    0
+  ); /* deixa o ícone preto, qualquer que seja a cor do SVG */
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+  .secao,
+  .contato {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    padding: 24px 0 40px;
+  }
+}
