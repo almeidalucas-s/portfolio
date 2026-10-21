@@ -24,7 +24,7 @@ img/
   github.svg
 ```
 
-## Como rodar
+## Como rodar.
 
 Não precisa instalar nada. Baixe o projeto e abra o `index.html` no navegador. No VS Code, a extensão Live Server atualiza a página sozinha a cada alteração.
 
