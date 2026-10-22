@@ -2,7 +2,7 @@
 
 Site pessoal de Lucas Almeida, feito só com HTML e CSS, com visual preto e branco minimalista.
 
-Site publicado: https://almeidalucas-s.github.io/portfolio/
+Site publicado: https://almeidalucas-s.github.io/portifolio/
 
 ## Páginas
 
